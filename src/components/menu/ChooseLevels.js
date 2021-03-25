@@ -1,8 +1,8 @@
 import React from "react";
-import Button from "./Button";
+import Button from "../Button";
 import { useHistory } from "react-router-dom";
 
-const ChooseLevels = ({ selectedLocation, sendSelectedLevels, playRestart }) => {
+const ChooseLevels = ({ selectedLocation, sendSelectedLevels, playClick }) => {
     let listOfLevel = [];
 
     switch (selectedLocation) {
@@ -35,7 +35,7 @@ const ChooseLevels = ({ selectedLocation, sendSelectedLevels, playRestart }) => 
         const chosenLevels = Number((event.target.firstChild.data).substring(0, 3));
         sendSelectedLevels(chosenLevels);
 
-        playRestart();
+        playClick();
 
         setTimeout(() => {
             history.push("/game");

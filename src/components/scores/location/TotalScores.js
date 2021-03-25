@@ -1,6 +1,6 @@
 import React from "react";
 import _ from "lodash";
-import TableScores from "./TableScores";
+import TableScores from "../TableScores";
 
 const TotalScores = ({ allDataPlayer }) => {
     const screenWidth = window.screen.availWidth;

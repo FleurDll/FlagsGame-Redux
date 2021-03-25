@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Flags Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_25/03/21_
 
-## Available Scripts
+## https://flagsgame-fd.netlify.app/
 
-In the project directory, you can run:
+This game test our knowledge of flags of the world. We can choose different modes to train the best according to our level. <br>
+Here are the features of the game :
 
-### `npm start`
+- Region (world, europe, americas, africa, asia, oceania)
+- Number of levels (10, 20, 50 etc)
+- Score
+- Indication on whether you have the correct answer or not
+- At the end of the game, you can see where you went wrong
+- A timer, to see how long it took you
+- Login with Google so your scores are registered
+- Compare your score with the other players at the scores page
+- Some sounds (button click, win, lose, ...)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Motivation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I love to memorize where each country is located and what are their flags. <br>
+So I thought, wouldn't it be cool to create my own app where I could train myself on? <br>
+It was above all a good way to challenge myself for my first React and Redux app.<br>
 
-### `npm test`
+## Built With
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- CSS
+- JavaScript
+- [React](https://fr.reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Redux](https://redux.js.org/)
+- [Google OAuth 2.0](https://developers.google.com/identity/protocols/oauth2)
+- DataBase [HarperDB](https://harperdb.io/)
+- [Semantic UI](https://semantic-ui.com/)
+- [Lodash](https://lodash.com/)
+- [useSound](https://www.npmjs.com/package/use-sound)
+- [Axios](https://www.npmjs.com/package/axios)
+- Deploy on [Netlify](https://www.netlify.com/)
 
-### `npm run build`
+## API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+From [Rest Countries](https://restcountries.eu/#rest-countries-stay-up-to-date) <br>
+I filtered the image sources of flags, the name of the countries and their region.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Future improvement
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Preview
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ©2021, Fleur Dalle

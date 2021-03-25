@@ -1,9 +1,15 @@
 import worldCountries from "../apis/worldCountries";
-import { SIGN_IN, SIGN_OUT, WINNING, LOOSING, CHOOSE_GAME_MODE, START_TIMER, STOP_TIMER, WRONG_ANSWERS, FETCH_COUNTRIES } from "./types";
+import { SIGN_IN, SIGN_OUT, WINNING, LOSING, CHOOSE_GAME_MODE, START_TIMER, STOP_TIMER, WRONG_ANSWERS, FETCH_COUNTRIES, RESET_COUNTRIES, RESET_GAME } from "./types";
 
-export const resetState = () => {
+export const resetGame = () => {
     return {
-        type: "RESET_STATE"
+        type: RESET_GAME
+    };
+};
+
+export const resetCountries = () => {
+    return {
+        type: RESET_COUNTRIES
     };
 };
 
@@ -35,7 +41,7 @@ export const winning = (level, score) => {
 
 export const loosing = (level) => {
     return {
-        type: LOOSING,
+        type: LOSING,
         payload: level
     };
 };
@@ -100,15 +106,3 @@ export const fetchCountriesData = (location) => async (dispatch, getState) => {
 
     dispatch({ type: FETCH_COUNTRIES, payload: { data, namePattern, srcPattern } });
 };
-
-/* export const fetchAllGames = () => dispatch => {
-    let [data] = useHarperDB({
-        query: {
-            operation: "sql",
-            sql: "SELECT * FROM flagsGame.game"
-        },
-        interval: 1000 * 120
-    });
-
-    dispatch({ type: FETCH_ALL_GAMES, payload: data });
-}; */

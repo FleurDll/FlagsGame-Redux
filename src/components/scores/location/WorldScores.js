@@ -1,11 +1,11 @@
 import React from "react";
 import _ from "lodash";
-import TableScores from "./TableScores";
-import DataTableScores from "./DataTableScores";
+import TableScores from "../TableScores";
+import DataTableScores from "../DataTableScores";
 
-const AfricaScores = ({ allDataPlayer }) => {
-    const sorted = _.orderBy(allDataPlayer, ["africaPoints"], ["desc"]);
-    const isEqualZero = (element) => element.africaPoints === 0;
+const WorldScores = ({ allDataPlayer }) => {
+    const sorted = _.orderBy(allDataPlayer, ["worldPoints"], ["desc"]);
+    const isEqualZero = (element) => element.worldPoints === 0;
 
     while (sorted.findIndex(isEqualZero) !== -1) {
         sorted.splice(sorted.findIndex(isEqualZero), 1);
@@ -17,14 +17,15 @@ const AfricaScores = ({ allDataPlayer }) => {
                 key={player.name}
                 name={player.name}
                 index={index}
-                points={player.africaPoints}
-                percentage={player.africaPercentage}
+                points={player.worldPoints}
+                percentage={player.worldPercentage}
             />
         );
     });
+
     return (
         <TableScores renderedDataPlayer={renderedDataPlayer} colSpan="4" />
     );
 };
 
-export default AfricaScores;
+export default WorldScores;

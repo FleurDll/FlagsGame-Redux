@@ -7,25 +7,21 @@ import restartSound from "../../sounds/short-click.mp3";
 import dataPlayer from "../../hooks/dataPlayer";
 import GoogleAuth from "../GoogleAuth";
 import Header from "../Header";
-import TotalScores from "./TotalScores";
-import WorldScores from "./WorldScores";
-import EuropeScores from "./EuropeScores";
-import AfricaScores from "./AfricaScores";
-import AsiaScores from "./AsiaScores";
-import AmericasScores from "./AmericasScores";
-import OceaniaScores from "./OceaniaScores";
+import MenuLargeScreen from "./MenuLargeScreen";
+import MenuSmallScreen from "./MenuSmallScreen";
+import LocationPath from "./LocationPath";
 import ScoresExplanation from "./ScoresExplanation";
 
 const Scores = () => {
     const [filter, setFilter] = useState("Total");
     const [showExplanation, setShowExplanation] = useState(false);
 
+    const screenWidth = window.screen.availWidth;
+
     const [playRestart] = useSound(
         restartSound,
         { volume: 0.50 }
     );
-
-    const screenWidth = window.screen.availWidth;
 
     let [data] = useHarperDB({
         query: {
@@ -72,54 +68,18 @@ const Scores = () => {
         );
     }
 
-    const onLinkClick = (location) => {
-        setFilter(location);
-        playRestart();
-    };
-
-    const menuLargeScreen = (
-        <div className="ui inverted vertical pointing menu score-filter">
-            <Link to="/scores" onClick={() => onLinkClick("Total")} className={`item ${filter === "Total" && "active"}`}>Total</Link>
-            <Link to="/scores" onClick={() => onLinkClick("World")} className={`item ${filter === "World" && "active"}`}>World</Link>
-            <Link to="/scores" onClick={() => onLinkClick("Europe")} className={`item ${filter === "Europe" && "active"}`}>Europe</Link>
-            <Link to="/scores" onClick={() => onLinkClick("Africa")} className={`item ${filter === "Africa" && "active"}`}>Africa</Link>
-            <Link to="/scores" onClick={() => onLinkClick("Asia")} className={`item ${filter === "Asia" && "active"}`}>Asia</Link>
-            <Link to="/scores" onClick={() => onLinkClick("Americas")} className={`item ${filter === "Americas" && "active"}`}>Americas</Link>
-            <Link to="/scores" onClick={() => onLinkClick("Oceania")} className={`item ${filter === "Oceania" && "active"}`}>Oceania</Link>
-        </div>
-    );
-
-    const menuSmallScreen = (
-        <>
-            <div className="ui inverted secondary pointing menu score-filter">
-                <Link to="/scores" onClick={() => onLinkClick("Total")} className={`item ${filter === "Total" && "active"}`}>Total</Link>
-                <Link to="/scores" onClick={() => onLinkClick("World")} className={`item ${filter === "World" && "active"}`}>World</Link>
-                <Link to="/scores" onClick={() => onLinkClick("Europe")} className={`item ${filter === "Europe" && "active"}`}>Europe</Link>
-                <Link to="/scores" onClick={() => onLinkClick("Africa")} className={`item ${filter === "Africa" && "active"}`}>Africa</Link>
-            </div>
-            <div className="ui inverted secondary pointing menu score-filter">
-                <Link to="/scores" onClick={() => onLinkClick("Asia")} className={`item ${filter === "Asia" && "active"}`}>Asia</Link>
-                <Link to="/scores" onClick={() => onLinkClick("Americas")} className={`item ${filter === "Americas" && "active"}`}>Americas</Link>
-                <Link to="/scores" onClick={() => onLinkClick("Oceania")} className={`item ${filter === "Oceania" && "active"}`}>Oceania</Link>
-            </div>
-        </>
-    );
-
     return (
         <div>
             <Header headerItem={headerItem} itemPosition="right" />
             <div className="card score-card">
-                {screenWidth >= 850 ? menuLargeScreen : menuSmallScreen}
+                {screenWidth >= 850 ?
+                    <MenuLargeScreen filter={filter} setFilter={setFilter} playRestart={playRestart} />
+                    :
+                    <MenuSmallScreen filter={filter} setFilter={setFilter} playRestart={playRestart} />
+                }
                 <div className="score-table">
-                    {filter === "Total" && <TotalScores allDataPlayer={allDataPlayer} />}
-                    {filter === "World" && <WorldScores allDataPlayer={allDataPlayer} />}
-                    {filter === "Europe" && <EuropeScores allDataPlayer={allDataPlayer} />}
-                    {filter === "Africa" && <AfricaScores allDataPlayer={allDataPlayer} />}
-                    {filter === "Asia" && <AsiaScores allDataPlayer={allDataPlayer} />}
-                    {filter === "Americas" && <AmericasScores allDataPlayer={allDataPlayer} />}
-                    {filter === "Oceania" && <OceaniaScores allDataPlayer={allDataPlayer} />}
+                    <LocationPath filter={filter} allDataPlayer={allDataPlayer} />
                 </div>
-
             </div>
             <div>
                 <h5

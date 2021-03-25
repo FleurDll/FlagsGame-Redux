@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const EndOfGameReview = (props) => {
+const ReviewEOG = ({ game }) => {
     return (
         <div className="end-game-footer">
             <p>To review your flags knowledge :</p>
-            {props.game.wrongAnswers.map(answer => {
+            {game.wrongAnswers.map(answer => {
                 return (
                     <div key={answer.name}>
                         <div className="wrong-answers">
@@ -24,4 +24,4 @@ const mapStateToProps = state => {
     return { game: state.game };
 };
 
-export default connect(mapStateToProps)(EndOfGameReview);
+export default connect(mapStateToProps)(ReviewEOG);

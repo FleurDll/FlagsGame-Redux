@@ -1,7 +1,7 @@
 import React from "react";
 import _ from "lodash";
-import TableScores from "./TableScores";
-import DataTableScores from "./DataTableScores";
+import TableScores from "../TableScores";
+import DataTableScores from "../DataTableScores";
 
 const OceaniaScores = ({ allDataPlayer }) => {
     const sorted = _.orderBy(allDataPlayer, ["oceaniaPoints"], ["desc"]);

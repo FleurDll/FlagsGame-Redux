@@ -1,22 +1,21 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { resetState, winning, loosing, wrongAnswers, startTimer, stopTimer } from "../../actions";
+import { resetCountries, resetGame, winning, loosing, wrongAnswers, startTimer, stopTimer } from "../../actions";
 import { Link } from "react-router-dom";
 import useSound from "use-sound";
 import winSound from "../../sounds/win.mp3";
 import loseSound from "../../sounds/lose.mp3";
-import restartSound from "../../sounds/short-click.mp3";
+import clickSound from "../../sounds/short-click.mp3";
 import endSound from "../../sounds/end-game.mp3";
 import Button from "../Button";
 import Header from "../Header";
 import ScoreLevel from "./ScoreLevel";
 import Flag from "./Flag";
 import ResponsesCard from "./ResponsesCard";
-import EndOfGame from "./EndOfGame";
+import EndOfGame from "./endOfGame/EndOfGame";
 
-
-const Game = (props) => {
+const Game = ({ countries, namePattern, srcPattern, game, resetCountries, resetGame }) => {
 
     const [playWin] = useSound(
         winSound,
@@ -28,8 +27,8 @@ const Game = (props) => {
         { volume: 1 }
     );
 
-    const [playRestart] = useSound(
-        restartSound,
+    const [playClick] = useSound(
+        clickSound,
         { volume: 0.50 }
     );
 
@@ -40,29 +39,29 @@ const Game = (props) => {
 
     useEffect(() => {
         const beginning = Date.now();
-        props.startTimer(beginning);
-    }, [props.countries.length]);
+        startTimer(beginning);
+    }, [countries.length]);
 
     useEffect(() => {
-        const start = props.game.start;
+        const start = game.start;
         const end = Date.now();
         const timer = (Math.round((end - start) / 1000) * 100 / 100);
-        props.stopTimer(timer);
-    }, [props.game.level]);
+        stopTimer(timer);
+    }, [game.level]);
 
     const handleAnswer = (chosenCountry) => {
-        const correctCountry = props.namePattern[props.game.level];
+        const correctCountry = namePattern[game.level];
 
         if (chosenCountry === correctCountry) {
-            props.winning(props.game.level, props.game.score);
+            winning(game.level, game.score);
             playWin();
             document.body.classList.add("win");
             setTimeout(() => {
                 document.body.classList.remove("win");
             }, 350);
         } else if (chosenCountry !== correctCountry) {
-            props.loosing(props.game.level);
-            props.wrongAnswers(props.namePattern[props.game.level], props.srcPattern[props.game.level]);
+            loosing(game.level);
+            wrongAnswers(namePattern[game.level], srcPattern[game.level]);
             playLose();
             document.body.classList.add("wrong");
             setTimeout(() => {
@@ -71,7 +70,7 @@ const Game = (props) => {
         }
     };
 
-    if (props.game.level === props.game.numberOfLevel && props.game.numberOfLevel !== 0) {
+    if (game.level === game.numberOfLevel && game.numberOfLevel !== 0) {
         return <EndOfGame playEnd={playEnd} />
     }
 
@@ -79,10 +78,13 @@ const Game = (props) => {
         <>
             <Link
                 to="/"
-                onClick={(() => props.resetState())}
+                onClick={(() => {
+                    resetCountries();
+                    resetGame();
+                })}
                 className="item-header">
                 <Button
-                    onButtonClick={() => playRestart()}
+                    onButtonClick={() => playClick()}
                     buttonText="Return"
                     customClass="inverted navigation-button"
                 />
@@ -97,7 +99,7 @@ const Game = (props) => {
                 headerItem={headerItem}
                 itemPosition="right"
             />
-            {props.countries.length !== 0 &&
+            {countries.length !== 0 &&
                 <div className={screenWidth > 515 ? "card" : "game-card"}>
                     <div className="game-card-header">
                         <img className="game-img" alt="earth" src="../images/worldwide.svg" />
@@ -124,4 +126,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, { resetState, winning, loosing, wrongAnswers, startTimer, stopTimer })(Game);
+export default connect(mapStateToProps, { resetCountries, resetGame, winning, loosing, wrongAnswers, startTimer, stopTimer })(Game);

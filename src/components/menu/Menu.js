@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { chooseGameMode, fetchCountriesData } from "../actions";
+import { chooseGameMode, fetchCountriesData } from "../../actions";
 import useSound from "use-sound";
-import restartSound from "../sounds/short-click.mp3";
-import Header from "./Header";
-import GoogleAuth from "./GoogleAuth";
+import clickSound from "../../sounds/short-click.mp3";
+import Header from "../Header";
+import GoogleAuth from "../GoogleAuth";
 import Dropdown from "./Dropdown";
 import ChooseLevels from "./ChooseLevels";
 
@@ -13,8 +13,8 @@ const Menu = ({ auth, game, chooseGameMode, fetchCountriesData }) => {
     const locationsAvailable = ["World", "Europe", "Africa", "Americas", "Asia", "Oceania"];
     const [selectLevels, setSelectLevels] = useState(false);
 
-    const [playRestart] = useSound(
-        restartSound,
+    const [playClick] = useSound(
+        clickSound,
         { volume: 0.50 }
     );
 
@@ -29,7 +29,7 @@ const Menu = ({ auth, game, chooseGameMode, fetchCountriesData }) => {
     };
 
     const handleLinkClick = () => {
-        playRestart();
+        playClick();
     }
 
     const headerItem = (
@@ -61,7 +61,7 @@ const Menu = ({ auth, game, chooseGameMode, fetchCountriesData }) => {
                         <ChooseLevels
                             selectedLocation={game.location}
                             sendSelectedLevels={receiveSelectedLevels}
-                            playRestart={playRestart}
+                            playClick={playClick}
                         />
                     </div>
                 }
