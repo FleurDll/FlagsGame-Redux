@@ -1,0 +1,11 @@
+export const SIGN_IN = "SIGN_IN";
+export const SIGN_OUT = "SIGN_OUT";
+export const WINNING = "WINNING";
+export const LOOSING = "LOOSING";
+export const CHOOSE_GAME_MODE = "CHOOSE_GAME_MODE";
+export const START_TIMER = "START_TIMER";
+export const STOP_TIMER = "STOP_TIMER";
+export const WRONG_ANSWERS = "WRONG_ANSWERS";
+export const FETCH_COUNTRIES = "FETCH_COUNTRIES";
+export const FETCH_ALL_GAMES = "FETCH_ALL_GAMES";
+export const RESET_STATE = "FETCH_STATE";

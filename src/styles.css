@@ -1,0 +1,456 @@
+:root {
+  --middle: #b8b8b8;
+  --dark-grey: #787878;
+  --dark-mode: #121212;
+  --win: rgba(106, 176, 76, 0.9);
+  --lose: rgba(235, 77, 75, 0.9);
+  --super-light: #f8f8f8;
+}
+
+body,
+a {
+  background-color: var(--dark-mode);
+  color: var(--super-light) !important;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  letter-spacing: 2px;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 35px;
+  color: var(--super-light);
+  margin: 40px 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 22px;
+  color: var(--super-light);
+  text-align: center;
+  margin: 0;
+}
+
+h3 {
+  color: var(--middle);
+  margin: 0;
+  text-align: center;
+}
+
+h4 {
+  font-size: 18px;
+  margin: 0;
+  margin: 0 5px;
+}
+
+.window {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  margin: 50px auto;
+  width: 700px;
+  border-radius: 10px;
+  padding: 55px;
+  background-color: rgba(18, 18, 18, 0.8);
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.7);
+}
+
+.separation {
+  background-color: #383838 !important;
+  height: 1px;
+  width: 450px;
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
+/***************************************************************************** navbar */
+.navigation {
+  position: static;
+  height: 60px;
+  padding: 10px;
+  background-color: #151515 !important;
+}
+
+.header-title-img {
+  display: flex;
+  background-color: #151515;
+}
+
+.header-img {
+  width: 40px;
+}
+
+.header-title {
+  padding: 5px;
+}
+
+.item-header {
+  align-self: baseline !important;
+  margin: 0 15px !important;
+}
+
+.item-header:hover {
+  color: var(--middle) !important;
+}
+
+/******************************************************************** menu */
+.menu-img {
+  width: 125px;
+}
+
+.dropdown {
+  width: 250px;
+  margin: 20px auto;
+}
+
+.menu-level {
+  margin-top: 35px;
+}
+
+.menu-level-button {
+  margin: 4px !important;
+  height: 45px;
+  width: 105px;
+}
+
+/*************************************************************************** scores */
+.score-card {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  width: 800px;
+  padding: 10px;
+}
+
+.score-table {
+  margin: auto;
+}
+
+.score-position-img {
+  width: 35px;
+}
+
+table {
+  color: var(--middle) !important;
+}
+
+thead {
+  color: var(--dark-grey);
+  font-size: 17px;
+}
+
+td {
+  text-align: center !important;
+  padding: 12px !important;
+  margin: 0 !important;
+}
+
+.score-question {
+  display: inline;
+  color: var(--dark-grey);
+}
+
+.score-explanation {
+  width: 450px;
+  margin: 10px auto !important;
+}
+
+.score-question:hover {
+  color: var(--middle);
+  cursor: pointer;
+}
+
+.score-schema {
+  display: flex;
+  flex-direction: column;
+}
+
+.schema-percentage td {
+  width: 100px;
+}
+
+.schema-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: auto;
+  width: 380px;
+}
+
+.interval-score {
+  height: 1px;
+  width: inherit;
+  background-color: #383838;
+}
+
+/******************************************************************* game */
+.game-img {
+  width: 80px;
+  float: left;
+}
+
+.game-title {
+  margin: 0 40px 0;
+}
+
+.game-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  margin: 30px;
+}
+
+.game-info-element {
+  display: flex;
+  justify-content: center;
+}
+
+.element-name {
+  color: var(--middle);
+}
+
+.element-content {
+  color: var(--dark-grey);
+}
+
+.game-pattern {
+  text-align: center;
+}
+
+.game-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 290px;
+  margin: 0;
+}
+
+.game-flag img {
+  width: 300px;
+  max-height: 275px;
+}
+
+.game-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.country-button {
+  margin: 12px !important;
+  height: 68px;
+  font-size: 17px !important;
+  letter-spacing: 1.2px;
+}
+
+.win {
+  background-color: var(--win);
+}
+
+.wrong {
+  background-color: var(--lose);
+}
+
+/********************************************************************* end game */
+.end-game-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.end-game-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 40px;
+  color: var(--middle);
+}
+
+.end-game-points {
+  margin-bottom: 40px !important;
+  color: var(--dark-grey);
+}
+
+.end-game-icon {
+  width: 40px;
+  margin: 0 10px;
+}
+
+.end-game-footer {
+  margin-top: 40px;
+}
+
+.end-game-footer p {
+  font-size: 18px;
+  color: var(--dark-grey);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wrong-answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2px;
+}
+
+.wrong-answers-flag {
+  width: 50px;
+  margin: 5px auto;
+}
+
+.wrong-answers-country {
+  text-align: left;
+  color: var(--dark-grey);
+  font-size: 14px;
+  margin: auto 0 !important;
+}
+
+/******************************************* responsive */
+
+@media (max-width: 850px) {
+  /*large tablet*/
+  .score-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 450px;
+    padding: 10px;
+  }
+
+  .score-table {
+    margin: 40px auto;
+  }
+
+  .score-filter {
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    border: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  /*small tablet*/
+  .card {
+    width: 500px;
+  }
+  .separation {
+    width: 325px;
+  }
+
+  .game-flag {
+    height: 250px;
+  }
+
+  .game-flag img {
+    width: 270px;
+    max-height: 225px;
+  }
+}
+
+@media (max-width: 515px) {
+  /* smartphone */
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  .navigation {
+    margin: 0 !important;
+  }
+  .card {
+    width: 100vw;
+    border-radius: 0;
+    background-color: rgba(18, 18, 18, 0.3);
+    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0);
+    padding: 50px 0 0px !important;
+  }
+  .menu-card {
+    margin: 0;
+  }
+  .game-card {
+    padding: 30px;
+  }
+
+  .game-img {
+    width: 0px;
+  }
+
+  .game-flag {
+    height: 180px;
+    margin: 15px 0 0;
+  }
+
+  .game-flag img {
+    width: 220px;
+    max-height: 175px;
+  }
+
+  .game-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .country-button {
+    height: 60px;
+    width: 240px;
+    font-size: 14px !important;
+    margin: 7px !important;
+  }
+
+  .item-header {
+    margin: 0 !important;
+  }
+
+  .score-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: rgba(18, 18, 18, 0.6);
+  }
+
+  .score-table {
+    min-height: 175px;
+  }
+
+  .score-explanation {
+    width: 80vw;
+  }
+
+  .score-schema {
+    width: 70vw;
+  }
+
+  .schema-points {
+    width: 60vw;
+    display: flex;
+  }
+
+  td {
+    padding: 1px !important;
+    width: 75px !important;
+  }
+  .score-position-img {
+    width: 25px;
+  }
+}
