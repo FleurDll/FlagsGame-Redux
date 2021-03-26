@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles.css";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import Menu from "./menu/Menu";
 import Game from "./game/Game";
 import Scores from "./scores/Scores";
@@ -8,11 +8,11 @@ import Scores from "./scores/Scores";
 const App = () => {
     return (
         <div>
-            <BrowserRouter>
+            <HashRouter>
                 <Route path="/" exact component={Menu} />
                 <Route path="/game" exact component={Game} />
                 <Route path="/scores" exact component={Scores} />
-            </BrowserRouter>
+            </HashRouter>
         </div>
     );
 };
