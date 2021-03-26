@@ -83,7 +83,8 @@ h4 {
 }
 
 .header-title-img {
-  display: flex;
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
   background-color: #151515;
 }
 
