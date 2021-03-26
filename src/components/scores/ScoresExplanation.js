@@ -36,7 +36,7 @@ const ScoresExplanation = ({ setShowExplanation }) => {
                     </tbody>
                 </table>
             </div>
-            <p>And to reward the strongest among us : <br /> 100% = +10 points.</p>
+            <p>And to reward the strongest among us : <br /> <span style={{ color: "#f8f8f8" }}>100% = +10 points</span>.</p>
             <p>Example : you got 14/20. Your success rate is 70%. Therefore, you won 14 + 2 = 19 points.</p>
         </>
     );

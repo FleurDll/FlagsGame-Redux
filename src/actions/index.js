@@ -39,7 +39,7 @@ export const winning = (level, score) => {
     };
 };
 
-export const loosing = (level) => {
+export const losing = (level) => {
     return {
         type: LOSING,
         payload: level

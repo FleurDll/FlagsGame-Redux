@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { resetCountries, resetGame, winning, loosing, wrongAnswers, startTimer, stopTimer } from "../../actions";
 import { Link } from "react-router-dom";
+import { winning, losing, startTimer, stopTimer, wrongAnswers, resetGame, resetCountries } from "../../actions/index";
 import useSound from "use-sound";
 import winSound from "../../sounds/win.mp3";
 import loseSound from "../../sounds/lose.mp3";
@@ -15,7 +15,16 @@ import Flag from "./Flag";
 import ResponsesCard from "./ResponsesCard";
 import EndOfGame from "./endOfGame/EndOfGame";
 
-const Game = ({ countries, namePattern, srcPattern, game, resetCountries, resetGame }) => {
+const Game = ({ game, namePattern, srcPattern, countries, winning, losing, startTimer, stopTimer, wrongAnswers, resetGame, resetCountries }) => {
+
+    // eslint-disable-next-line no-unused-vars
+    const [state, setState] = useState({});
+
+    useEffect(() => { // fixing : cancel all subscriptions and asynchronous tasks in a useEffect cleanup function
+        return () => {
+            setState({});
+        };
+    }, []);
 
     const [playWin] = useSound(
         winSound,
@@ -40,7 +49,7 @@ const Game = ({ countries, namePattern, srcPattern, game, resetCountries, resetG
     useEffect(() => {
         const beginning = Date.now();
         startTimer(beginning);
-    }, [countries.length]);
+    }, []);
 
     useEffect(() => {
         const start = game.start;
@@ -60,7 +69,7 @@ const Game = ({ countries, namePattern, srcPattern, game, resetCountries, resetG
                 document.body.classList.remove("win");
             }, 350);
         } else if (chosenCountry !== correctCountry) {
-            loosing(game.level);
+            losing(game.level);
             wrongAnswers(namePattern[game.level], srcPattern[game.level]);
             playLose();
             document.body.classList.add("wrong");
@@ -79,8 +88,8 @@ const Game = ({ countries, namePattern, srcPattern, game, resetCountries, resetG
             <Link
                 to="/"
                 onClick={(() => {
-                    resetCountries();
                     resetGame();
+                    resetCountries();
                 })}
                 className="item-header">
                 <Button
@@ -93,6 +102,7 @@ const Game = ({ countries, namePattern, srcPattern, game, resetCountries, resetG
     );
 
     const screenWidth = window.screen.availWidth;
+
     return (
         <div>
             <Header
@@ -126,4 +136,4 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps, { resetCountries, resetGame, winning, loosing, wrongAnswers, startTimer, stopTimer })(Game);
+export default connect(mapStateToProps, { winning, losing, startTimer, stopTimer, wrongAnswers, resetGame, resetCountries })(Game);

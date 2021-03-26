@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
+import React, { useState, useEffect } from "react";
 import { useHarperDB } from "use-harperdb";
 import { Link } from "react-router-dom";
 import useSound from "use-sound";
@@ -17,6 +16,15 @@ const Scores = () => {
     const [showExplanation, setShowExplanation] = useState(false);
 
     const screenWidth = window.screen.availWidth;
+
+    // eslint-disable-next-line no-unused-vars
+    const [state, setState] = useState({});
+
+    useEffect(() => { // fixing : cancel all subscriptions and asynchronous tasks in a useEffect cleanup function
+        return () => {
+            setState({});
+        };
+    }, []);
 
     const [playRestart] = useSound(
         restartSound,
@@ -94,8 +102,4 @@ const Scores = () => {
     );
 };
 
-const mapStateToProps = state => {
-    return { auth: state.auth };
-};
-
-export default connect(mapStateToProps)(Scores);
+export default Scores;

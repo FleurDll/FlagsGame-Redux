@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { detect } from "detect-browser";
 import { chooseGameMode, fetchCountriesData } from "../../actions";
 import useSound from "use-sound";
 import clickSound from "../../sounds/short-click.mp3";
@@ -9,14 +10,33 @@ import GoogleAuth from "../GoogleAuth";
 import Dropdown from "./Dropdown";
 import ChooseLevels from "./ChooseLevels";
 
-const Menu = ({ auth, game, chooseGameMode, fetchCountriesData }) => {
+const Menu = ({ game, chooseGameMode, fetchCountriesData }) => {
     const locationsAvailable = ["World", "Europe", "Africa", "Americas", "Asia", "Oceania"];
     const [selectLevels, setSelectLevels] = useState(false);
+
+    useEffect(() => {
+        const browser = detect();
+
+        if (browser) {
+            console.log(browser.name);
+            console.log(browser.version);
+            console.log(browser.os);
+        }
+    }, []);
 
     const [playClick] = useSound(
         clickSound,
         { volume: 0.50 }
     );
+
+    // eslint-disable-next-line no-unused-vars
+    const [state, setState] = useState({});
+
+    useEffect(() => { // fixing : cancel all subscriptions and asynchronous tasks in a useEffect cleanup function
+        return () => {
+            setState({});
+        };
+    }, []);
 
     const receiveSelectedItem = (chosenItem) => {
         setSelectLevels(true);
@@ -71,10 +91,7 @@ const Menu = ({ auth, game, chooseGameMode, fetchCountriesData }) => {
 };
 
 const mapStateToProps = state => {
-    return {
-        game: state.game,
-        auth: state.auth
-    };
+    return { game: state.game };
 };
 
 export default connect(mapStateToProps, { chooseGameMode, fetchCountriesData })(Menu);

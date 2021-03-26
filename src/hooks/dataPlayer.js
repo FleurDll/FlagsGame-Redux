@@ -65,7 +65,7 @@ const dataPlayer = (personnalData, name) => {
 
     const totalGames = personnalData.length;
 
-    const donnees = {
+    const infoPlayer = {
         name: name,
         totalGames: totalGames,
         worldPercentage: getPointsByLocation("World")[0],
@@ -84,7 +84,7 @@ const dataPlayer = (personnalData, name) => {
         percentageTotal: percentageTotal,
         bestTime: bestTime
     };
-    return donnees;
+    return infoPlayer;
 };
 
 export default dataPlayer;

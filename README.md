@@ -43,6 +43,8 @@ It was above all a good way to challenge myself for my first React and Redux app
 From [Rest Countries](https://restcountries.eu/#rest-countries-stay-up-to-date) <br>
 I filtered the image sources of flags, the name of the countries and their region.
 
+## Database
+
 ## Future improvement
 
 ## Preview

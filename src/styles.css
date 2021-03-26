@@ -1,10 +1,10 @@
 :root {
+  --super-light: #f8f8f8;
   --middle: #b8b8b8;
   --dark-grey: #787878;
   --dark-mode: #121212;
   --win: rgba(106, 176, 76, 0.9);
   --lose: rgba(235, 77, 75, 0.9);
-  --super-light: #f8f8f8;
 }
 
 body,
@@ -12,9 +12,9 @@ a {
   background-color: var(--dark-mode);
   color: var(--super-light) !important;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
 }
 
 p {
@@ -22,14 +22,14 @@ p {
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 2.2rem;
   color: var(--super-light);
-  margin: 40px 0;
+  margin: 2.5rem 0;
   text-align: center;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 1.375rem;
   color: var(--super-light);
   text-align: center;
   margin: 0;
@@ -42,9 +42,9 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
   margin: 0;
-  margin: 0 5px;
+  margin: 0 0.3rem;
 }
 
 .window {
@@ -56,20 +56,20 @@ h4 {
 }
 
 .card {
-  margin: 50px auto;
-  width: 700px;
-  border-radius: 10px;
-  padding: 55px;
+  margin: 3.125rem auto;
+  width: 44rem;
+  border-radius: 0.625rem;
+  padding: 3.4rem;
   background-color: rgba(18, 18, 18, 0.8);
-  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.7);
 }
 
 .separation {
   background-color: #383838 !important;
-  height: 1px;
-  width: 450px;
+  height: 0.06rem;
+  width: 28rem;
   margin: 0 auto;
   padding: 0 !important;
 }
@@ -77,8 +77,8 @@ h4 {
 /***************************************************************************** navbar */
 .navigation {
   position: static;
-  height: 60px;
-  padding: 10px;
+  height: 3.8rem;
+  padding: 0.63rem;
   background-color: #151515 !important;
 }
 
@@ -88,16 +88,16 @@ h4 {
 }
 
 .header-img {
-  width: 40px;
+  width: 2.5rem;
 }
 
 .header-title {
-  padding: 5px;
+  padding: 0.32rem;
 }
 
 .item-header {
   align-self: baseline !important;
-  margin: 0 15px !important;
+  margin: 0 0.9rem !important;
 }
 
 .item-header:hover {
@@ -106,16 +106,16 @@ h4 {
 
 /******************************************************************** menu */
 .menu-img {
-  width: 125px;
+  width: 7.8rem;
 }
 
 .dropdown {
-  width: 250px;
-  margin: 20px auto;
+  width: 16rem;
+  margin: 1.25rem auto;
 }
 
 .menu-level {
-  margin-top: 35px;
+  margin-top: 2.2rem;
 }
 
 .menu-level-button {
@@ -128,8 +128,8 @@ h4 {
 .score-card {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
-  width: 800px;
-  padding: 10px;
+  width: 50rem;
+  padding: 0.625rem;
 }
 
 .score-table {
@@ -137,7 +137,7 @@ h4 {
 }
 
 .score-position-img {
-  width: 35px;
+  width: 2.2rem;
 }
 
 table {
@@ -146,12 +146,12 @@ table {
 
 thead {
   color: var(--dark-grey);
-  font-size: 17px;
+  font-size: 1.1rem;
 }
 
 td {
   text-align: center !important;
-  padding: 12px !important;
+  padding: 0.75rem !important;
   margin: 0 !important;
 }
 
@@ -161,8 +161,8 @@ td {
 }
 
 .score-explanation {
-  width: 450px;
-  margin: 10px auto !important;
+  width: 28.125rem;
+  margin: 0.625rem auto !important;
 }
 
 .score-question:hover {
@@ -176,7 +176,7 @@ td {
 }
 
 .schema-percentage td {
-  width: 100px;
+  width: 6.25rem;
 }
 
 .schema-points {
@@ -184,30 +184,30 @@ td {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   margin: auto;
-  width: 380px;
+  width: 23rem;
 }
 
 .interval-score {
-  height: 1px;
+  height: 0.063rem;
   width: inherit;
   background-color: #383838;
 }
 
 /******************************************************************* game */
 .game-img {
-  width: 80px;
+  width: 5rem;
   float: left;
 }
 
 .game-title {
-  margin: 0 40px 0;
+  margin: 0 2.5rem 0;
 }
 
 .game-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: center;
-  margin: 30px;
+  margin: 1.9rem;
 }
 
 .game-info-element {
@@ -231,13 +231,13 @@ td {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 290px;
+  height: 19rem;
   margin: 0;
 }
 
 .game-flag img {
-  width: 300px;
-  max-height: 275px;
+  width: 19rem;
+  max-height: 18rem;
 }
 
 .game-buttons {
@@ -247,10 +247,10 @@ td {
 }
 
 .country-button {
-  margin: 12px !important;
-  height: 68px;
-  font-size: 17px !important;
-  letter-spacing: 1.2px;
+  margin: 0.75rem !important;
+  height: 4.25rem;
+  font-size: 1.1rem !important;
+  letter-spacing: 0.1rem;
 }
 
 .win {
@@ -271,64 +271,61 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0 40px;
+  margin: 0.6rem 0 2.5rem;
   color: var(--middle);
 }
 
 .end-game-points {
-  margin-bottom: 40px !important;
+  margin-bottom: 2.5rem !important;
   color: var(--dark-grey);
 }
 
 .end-game-icon {
-  width: 40px;
-  margin: 0 10px;
+  width: 2.5rem;
+  margin: 0 0.6rem;
 }
 
 .end-game-footer {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 .end-game-footer p {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--dark-grey);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .wrong-answers {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 2px;
+  margin: 0.125rem;
 }
 
 .wrong-answers-flag {
-  width: 50px;
-  margin: 5px auto;
+  width: 3.125rem;
+  margin: 0.35rem auto;
 }
 
 .wrong-answers-country {
   text-align: left;
   color: var(--dark-grey);
-  font-size: 14px;
+  font-size: 0.875rem;
   margin: auto 0 !important;
 }
 
 /******************************************* responsive */
-
 @media (max-width: 850px) {
   /*large tablet*/
   .score-card {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    max-width: 450px;
-    padding: 10px;
+    max-width: 28.125rem;
+    padding: 0.625rem;
   }
-
   .score-table {
-    margin: 40px auto;
+    margin: 2.5rem auto;
   }
-
   .score-filter {
     margin: 0 !important;
     display: flex;
@@ -340,87 +337,57 @@ td {
 @media (max-width: 720px) {
   /*small tablet*/
   .card {
-    width: 500px;
+    width: 31.25rem;
   }
   .separation {
-    width: 325px;
+    width: 20.313rem;
   }
-
   .game-flag {
-    height: 250px;
+    height: 15.625rem;
   }
-
   .game-flag img {
-    width: 270px;
-    max-height: 225px;
+    width: 16.875rem;
+    max-height: 14.063rem;
   }
 }
 
 @media (max-width: 515px) {
   /* smartphone */
   h1 {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
   h2 {
-    font-size: 16px;
+    font-size: 1rem;
   }
   h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
   h4 {
-    font-size: 16px;
+    font-size: 1rem;
   }
+  /*navbar*/
   .navigation {
     margin: 0 !important;
   }
+  .item-header {
+    margin: 0 !important;
+  }
+  /*cards*/
   .card {
     width: 100vw;
     border-radius: 0;
     background-color: rgba(18, 18, 18, 0.3);
-    -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0);
-    -moz-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0);
-    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0);
-    padding: 50px 0 0px !important;
+    -webkit-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0);
+    padding: 3.125rem 0 0 !important;
   }
   .menu-card {
     margin: 0;
   }
   .game-card {
-    padding: 30px;
+    padding: 1.875rem;
   }
-
-  .game-img {
-    width: 0px;
-  }
-
-  .game-flag {
-    height: 180px;
-    margin: 15px 0 0;
-  }
-
-  .game-flag img {
-    width: 220px;
-    max-height: 175px;
-  }
-
-  .game-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 8px;
-  }
-
-  .country-button {
-    height: 60px;
-    width: 240px;
-    font-size: 14px !important;
-    margin: 7px !important;
-  }
-
-  .item-header {
-    margin: 0 !important;
-  }
-
   .score-card {
     display: flex;
     flex-direction: column;
@@ -428,29 +395,49 @@ td {
     margin: 0;
     background-color: rgba(18, 18, 18, 0.6);
   }
-
-  .score-table {
-    min-height: 175px;
+  /*game*/
+  .game-img {
+    width: 0;
   }
-
+  .game-flag {
+    height: 11.25rem;
+    margin: 0.938rem 0 0;
+  }
+  .game-flag img {
+    width: 13.75rem;
+    max-height: 10.938rem;
+  }
+  .game-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  .country-button {
+    height: 3.75rem;
+    width: 15rem;
+    font-size: 0.875rem !important;
+    margin: 0.438rem !important;
+  }
+  /*scores*/
+  .score-table {
+    min-height: 10.938rem;
+  }
   .score-explanation {
     width: 80vw;
   }
-
   .score-schema {
     width: 70vw;
   }
-
   .schema-points {
     width: 60vw;
     display: flex;
   }
-
   td {
-    padding: 1px !important;
-    width: 75px !important;
+    padding: 0.063rem !important;
+    width: 4.7rem !important;
   }
   .score-position-img {
-    width: 25px;
+    width: 1.563rem;
   }
 }
