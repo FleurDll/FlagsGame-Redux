@@ -2,7 +2,7 @@
 
 _25/03/21_
 
-## https://flagsgame-fd.netlify.app/
+## https://flags-game-fd.netlify.app
 
 This game test our knowledge of flags of the world. We can choose different modes to train the best according to our level. <br>
 Here are the features of the game :
@@ -47,6 +47,20 @@ I filtered the image sources of flags, the name of the countries and their regio
 
 ## Future improvement
 
+I intend to add the time taken in the scores page. <br>
+And also a way to reward with points the players who had a good score in a short amount of time.
+
 ## Preview
+
+- Desktop <br>
+  ![desktop-menu](https://user-images.githubusercontent.com/75179031/112616720-59b60500-8e24-11eb-8fe7-c7a7ed1001d5.png) <br>
+  ![desktop-game](https://user-images.githubusercontent.com/75179031/112616717-59b60500-8e24-11eb-814f-f38bc285be84.png) <br>
+  ![desktop-endGame](https://user-images.githubusercontent.com/75179031/112616714-591d6e80-8e24-11eb-918a-9596dbfc20ee.png) <br>
+  ![desktop-scores](https://user-images.githubusercontent.com/75179031/112616721-59b60500-8e24-11eb-82aa-6a10805f7f33.png) <br>
+
+- Smartphone <br>
+  ![smartphone-game](https://user-images.githubusercontent.com/75179031/112616724-5a4e9b80-8e24-11eb-9927-8bd6ec03fb79.png) <br>
+  ![smartphone-endGame](https://user-images.githubusercontent.com/75179031/112616722-5a4e9b80-8e24-11eb-8d80-f2d7603c5289.png) <br>
+  ![smartphone-scores](https://user-images.githubusercontent.com/75179031/112616711-5884d800-8e24-11eb-8a8f-ebb0982a19ca.png) <br>
 
 ## ©2021, Fleur Dalle
