@@ -1,6 +1,6 @@
 import React from "react";
 
-const TableScores = (props) => {
+const TableScores = ({ renderedDataPlayer }) => {
     const screenWidth = window.screen.availWidth;
     return (
         <table className="ui very basic table unstackable score-table">
@@ -17,7 +17,7 @@ const TableScores = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.renderedDataPlayer}
+                {renderedDataPlayer}
             </tbody>
         </table>
     );
