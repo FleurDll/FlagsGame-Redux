@@ -19,11 +19,12 @@ const OceaniaScores = ({ allDataPlayer }) => {
                 index={index}
                 points={player.oceaniaPoints}
                 percentage={player.oceaniaPercentage}
+                totalGames={player.oceaniaGames}
             />
         );
     });
     return (
-        <TableScores renderedDataPlayer={renderedDataPlayer} colSpan="4" />
+        <TableScores renderedDataPlayer={renderedDataPlayer} />
     );
 };
 

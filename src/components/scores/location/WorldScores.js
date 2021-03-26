@@ -19,12 +19,13 @@ const WorldScores = ({ allDataPlayer }) => {
                 index={index}
                 points={player.worldPoints}
                 percentage={player.worldPercentage}
+                totalGames={player.worldGames}
             />
         );
     });
 
     return (
-        <TableScores renderedDataPlayer={renderedDataPlayer} colSpan="4" />
+        <TableScores renderedDataPlayer={renderedDataPlayer} />
     );
 };
 

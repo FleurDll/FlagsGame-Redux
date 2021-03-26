@@ -19,11 +19,12 @@ const AfricaScores = ({ allDataPlayer }) => {
                 index={index}
                 points={player.africaPoints}
                 percentage={player.africaPercentage}
+                totalGames={player.africaGames}
             />
         );
     });
     return (
-        <TableScores renderedDataPlayer={renderedDataPlayer} colSpan="4" />
+        <TableScores renderedDataPlayer={renderedDataPlayer} />
     );
 };
 

@@ -32,6 +32,8 @@ const dataPlayer = (personnalData, name) => {
     const getPointsByLocation = (location) => {
         const locationData = personnalData.filter(value => value.location === location);
 
+        const totalGamesLocation = locationData.length;
+
         if (locationData.length === 0) {
             return [0, 0];
         }
@@ -60,7 +62,7 @@ const dataPlayer = (personnalData, name) => {
         const scoresSumLocation = scoresLocation.reduce((a, b) => a + b);
         const percentageLocation = Math.round((scoresSumLocation / levelsSumLocation) * 100);
 
-        return [percentageLocation, pointsLocation];
+        return [percentageLocation, pointsLocation, totalGamesLocation];
     };
 
     const totalGames = personnalData.length;
@@ -70,16 +72,22 @@ const dataPlayer = (personnalData, name) => {
         totalGames: totalGames,
         worldPercentage: getPointsByLocation("World")[0],
         worldPoints: getPointsByLocation("World")[1],
+        worldGames: getPointsByLocation("World")[2],
         europePercentage: getPointsByLocation("Europe")[0],
         europePoints: getPointsByLocation("Europe")[1],
+        europeGames: getPointsByLocation("Europe")[2],
         africaPercentage: getPointsByLocation("Africa")[0],
         africaPoints: getPointsByLocation("Africa")[1],
+        africaGames: getPointsByLocation("Africa")[2],
         asiaPercentage: getPointsByLocation("Asia")[0],
         asiaPoints: getPointsByLocation("Asia")[1],
+        asiaGames: getPointsByLocation("Asia")[2],
         americasPercentage: getPointsByLocation("Americas")[0],
         americasPoints: getPointsByLocation("Americas")[1],
+        americasGames: getPointsByLocation("Americas")[2],
         oceaniaPercentage: getPointsByLocation("Oceania")[0],
         oceaniaPoints: getPointsByLocation("Oceania")[1],
+        oceaniaGames: getPointsByLocation("Oceania")[2],
         pointsTotal: pointsTotal,
         percentageTotal: percentageTotal,
         bestTime: bestTime

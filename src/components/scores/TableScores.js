@@ -10,10 +10,10 @@ const TableScores = (props) => {
                     <td>Name</td>
                     <td>{screenWidth > 515 ? "Points" : "Pts"}</td>
                     <td>{screenWidth > 515 ? "Success Rate" : "%"}</td>
-                    {props.otherRow}
+                    <td>{screenWidth > 515 ? "Nb of Games" : "Games"}</td>
                 </tr>
                 <tr>
-                    <td colSpan={props.colSpan} className="separation"></td>
+                    <td colSpan="5" className="separation"></td>
                 </tr>
             </thead>
             <tbody>

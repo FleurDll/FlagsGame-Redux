@@ -19,11 +19,12 @@ const AmericasScores = ({ allDataPlayer }) => {
                 index={index}
                 points={player.americasPoints}
                 percentage={player.americasPercentage}
+                totalGames={player.americasGames}
             />
         );
     });
     return (
-        <TableScores renderedDataPlayer={renderedDataPlayer} colSpan="4" />
+        <TableScores renderedDataPlayer={renderedDataPlayer} />
     );
 };
 
