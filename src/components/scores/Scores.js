@@ -53,6 +53,12 @@ const Scores = () => {
         allDataPlayer.push(dataPlayer(personnalData, nameList[x]));
     }
 
+    /*   for (var name of nameList) {
+          // eslint-disable-next-line no-loop-func
+          const personnalData = data.filter(game => game.name === name);
+          allDataPlayer.push(dataPlayer(personnalData, name);
+      } */
+
     const handleLinkClick = () => {
         playRestart();
     };
