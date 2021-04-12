@@ -47,17 +47,11 @@ const Scores = () => {
 
     const allDataPlayer = [];
 
-    for (var x = 0; x < nameList.length; x++) {
+    for (var j = 0; j < nameList.length; j++) {
         // eslint-disable-next-line no-loop-func
-        const personnalData = data.filter(game => game.name === nameList[x]);
-        allDataPlayer.push(dataPlayer(personnalData, nameList[x]));
+        const personnalData = data.filter(game => game.name === nameList[j]);
+        allDataPlayer.push(dataPlayer(personnalData, nameList[j]));
     }
-
-    /*   for (var name of nameList) {
-          // eslint-disable-next-line no-loop-func
-          const personnalData = data.filter(game => game.name === name);
-          allDataPlayer.push(dataPlayer(personnalData, name);
-      } */
 
     const handleLinkClick = () => {
         playRestart();
