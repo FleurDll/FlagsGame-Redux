@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { detect } from "detect-browser";
 import { chooseGameMode, fetchCountriesData } from "../../actions";
 import useSound from "use-sound";
 import clickSound from "../../sounds/short-click.mp3";
@@ -13,16 +12,6 @@ import ChooseLevels from "./ChooseLevels";
 const Menu = ({ game, chooseGameMode, fetchCountriesData }) => {
     const locationsAvailable = ["World", "Europe", "Africa", "Americas", "Asia", "Oceania"];
     const [selectLevels, setSelectLevels] = useState(false);
-
-    useEffect(() => {
-        const browser = detect();
-
-        if (browser) {
-            console.log(browser.name);
-            console.log(browser.version);
-            console.log(browser.os);
-        }
-    }, []);
 
     const [playClick] = useSound(
         clickSound,

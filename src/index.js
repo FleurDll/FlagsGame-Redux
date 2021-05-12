@@ -14,9 +14,9 @@ const store = createStore(reducers, composeEnhancers(applyMiddleware(reduxThunk)
 ReactDOM.render(
     <Provider store={store}>
         <HarperDBProvider
-            url="https://cloud-flag-fleurtech.harperdbcloud.com"
-            user="FleurDll"
-            password="FlowerPower*18"
+            url={process.env.REACT_APP_URL_DB}
+            user={process.env.REACT_APP_USER_DB}
+            password={process.env.REACT_APP_PASSWORD_DB}
         >
             <App />
         </HarperDBProvider>
