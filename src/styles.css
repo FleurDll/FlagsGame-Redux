@@ -48,7 +48,6 @@ h4 {
 }
 
 .window {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,9 +76,11 @@ h4 {
 /***************************************************************************** navbar */
 .navigation {
   position: static;
-  height: 3.8rem;
-  padding: 0.63rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
   background-color: #151515 !important;
+  padding: 0 20px;
 }
 
 .header-title-img {
@@ -94,11 +95,12 @@ h4 {
 
 .header-title {
   padding: 0.32rem;
+  font-size: 23px;
 }
 
 .item-header {
-  align-self: baseline !important;
   margin: 0 0.9rem !important;
+  font-size: 18px;
 }
 
 .item-header:hover {
@@ -322,6 +324,10 @@ td {
 /******************************************* responsive */
 @media (max-width: 850px) {
   /*large tablet*/
+  .item-header {
+    font-size: 15px;
+  }
+
   .score-card {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -336,6 +342,10 @@ td {
     display: flex;
     justify-content: center;
     border: none !important;
+  }
+
+  .header-title {
+    font-size: 18px;
   }
 }
 
