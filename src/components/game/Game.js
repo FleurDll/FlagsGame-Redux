@@ -17,6 +17,7 @@ import EndOfGame from "./endOfGame/EndOfGame";
 
 const Game = ({ game, namePattern, srcPattern, countries, winning, losing, startTimer, stopTimer, wrongAnswers, resetGame, resetCountries }) => {
 
+    console.log(countries);
     // eslint-disable-next-line no-unused-vars
     const [state, setState] = useState({});
 

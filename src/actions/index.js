@@ -97,11 +97,11 @@ export const fetchCountriesData = (location) => async (dispatch, getState) => {
     }
 
     for (var i = 0; i < numberOfLevels; i++) {
-        namePattern.push(data[pattern[i]].name);
+        namePattern.push(data[pattern[i]].name.official);
     }
 
     for (var x = 0; x < numberOfLevels; x++) {
-        srcPattern.push(data[pattern[x]].flag);
+        srcPattern.push(data[pattern[x]].flags.png);
     }
 
     dispatch({ type: FETCH_COUNTRIES, payload: { data, namePattern, srcPattern } });

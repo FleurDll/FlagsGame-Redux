@@ -10,7 +10,7 @@ const ResponsesCard = ({ countries, namePattern, game, sendData }) => {
         const countriesName = [];
 
         countries.forEach(country => {
-            countriesName.push(country.name);
+            countriesName.push(country.name.common);
         });
 
         const buttonText = [namePattern[game.level]];
